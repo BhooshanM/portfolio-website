@@ -622,17 +622,17 @@
           <form id="contact-form">
             <div class="mb-6">
               <label class="block mb-2">Your Name </label>
-              <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500" placeholder="Example:-Shree Hari🫆">
+              <input type="text" name="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500" placeholder="Example:-Bhooshan🫆">
             </div>
             
             <div class="mb-6">
               <label class="block mb-2">Email Address</label>
-              <input type="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500" placeholder="Bhooshan@example.com">
+              <input type="email" name="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500" placeholder="Bhooshan@example.com">
             </div>
             
             <div class="mb-6">
               <label class="block mb-2">Project Type</label>
-              <select class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500">
+              <select name="projectType" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500">
                 <option>Web Development</option>
                 <option>Mobile App</option>
                 <option>UI/UX Design</option>
@@ -643,7 +643,7 @@
             
             <div class="mb-6">
               <label class="block mb-2">Message</label>
-              <textarea rows="4" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500" placeholder="Tell me about your project..."></textarea>
+              <textarea name="message" rows="4" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500" placeholder="Tell me about your project..."></textarea>
             </div>
             
             <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 py-4 rounded-xl text-lg font-semibold transition-colors">
@@ -739,12 +739,33 @@
   });
 
   // Form submission
-  const contactForm = document.getElementById('contact-form');
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Thank you for your message! I\'ll get back to you soon.');
+ const contactForm = document.getElementById('contact-form');
+
+contactForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = {
+    name: contactForm.name.value,
+    email: contactForm.email.value,
+    projectType: contactForm.projectType.value,
+    message: contactForm.message.value
+  };
+
+  try {
+    const response = await fetch("http://localhost:5000/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+    alert(result.message);
     contactForm.reset();
-  });
+  } catch (error) {
+    alert("Server error");
+  }
+});
+
 
   // Project card buttons
   document.querySelectorAll('.project-card button').forEach(button => {
