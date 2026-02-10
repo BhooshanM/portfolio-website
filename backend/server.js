@@ -2,29 +2,33 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
-const app = express();
+const connectDB = require("./config/db");
+const contactRoutes = require("./routes/contactRoutes");
 
-/**
- * ✅ ROOT TEST ROUTE
- * This must be BEFORE DB connection
- */
-app.get("/", (req, res) => {
-  res.send("Backend running successfully");
-});
+const app = express();
 
 // middleware
 app.use(cors());
 app.use(express.json());
 
-// database
-const connectDB = require("./config/db");
-connectDB();
+// ✅ ROOT ROUTE (Render health check)
+app.get("/", (req, res) => {
+  res.status(200).send("Backend running successfully");
+});
 
 // routes
-const contactRoutes = require("./routes/contactRoutes");
 app.use("/api/contact", contactRoutes);
 
-// port (Render injects PORT automatically)
+// database connection (safe)
+(async () => {
+  try {
+    await connectDB();
+    console.log("MongoDB connected");
+  } catch (err) {
+    console.error("MongoDB connection failed:", err.message);
+  }
+})();
+
 const PORT = process.env.PORT || 10000;
 
 app.listen(PORT, () => {
