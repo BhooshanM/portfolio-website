@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
-const connectDB = require("./config/db");
+const { connectDB } = require("./config/db");
 const contactRoutes = require("./routes/contactRoutes");
 
 const app = express();
@@ -23,7 +23,7 @@ app.use("/api/contact", contactRoutes);
 (async () => {
   try {
     await connectDB();
-    console.log("MongoDB connected");
+    console.log("MySQL connected");
   } catch (err) {
     console.error("MongoDB connection failed:", err.message);
   }
