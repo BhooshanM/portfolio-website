@@ -1,162 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Bhooshan | Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bhooshan | Portfolio</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet" />
-<!-- Font Awesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- Custom Styles & Animations -->
-<style>
-  body {
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
-  }
-  
-  .fade-up {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.8s ease;
-  }
-  .fade-up.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .gradient-text {
-    background: linear-gradient(90deg, #4f46e5, #06b6d4, #3b82f6);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    background-size: 200% auto;
-    animation: gradient 3s ease infinite;
-  }
-  
-  @keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  
-  .project-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);
-  }
-  
-  .skill-bar {
-    height: 8px;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-    margin-top: 5px;
-  }
-  
-  .skill-progress {
-    height: 100%;
-    border-radius: 4px;
-    background: linear-gradient(90deg, #4f46e5, #3b82f6);
-    width: 0%;
-    transition: width 1.5s ease;
-  }
-  
-  .skill-progress.show {
-    width: var(--skill-level);
-  }
-  
-  .floating {
-    animation: floating 6s ease-in-out infinite;
-  }
-  
-  @keyframes floating {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
-  }
-  
-  .glass-effect {
-    background: rgba(30, 41, 59, 0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .timeline-item {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 30px;
-  }
-  
-  .timeline-item:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 5px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #3b82f6;
-  }
-  
-  .timeline-item:after {
-    content: '';
-    position: absolute;
-    left: 5px;
-    top: 20px;
-    width: 2px;
-    height: calc(100% + 10px);
-    background: rgba(59, 130, 246, 0.4);
-  }
-  
-  .timeline-item:last-child:after {
-    display: none;
-  }
-  
-  .typewriter {
-    overflow: hidden;
-    border-right: .15em solid #3b82f6;
-    white-space: nowrap;
-    margin: 0 auto;
-    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-  }
-  
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #3b82f6; }
-  }
-  
-  .pulse {
-    animation: pulse 2s infinite;
-  }
-  
-  @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
-  }
-  
-  .dark-overlay {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
-  }
-</style>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 0.8s ease;
+        }
+
+        .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
 </head>
 <body class="bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white overflow-x-hidden">
+
+<h1 style="color: white;">TEST PAGE LOADED</h1>
 
 <!-- Navigation -->
 <nav class="glass-effect fixed w-full z-50 py-4">
@@ -204,7 +88,7 @@
   <div class="relative z-10">
     <div class="mb-6 fade-up">
       <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-blue-500/30 pulse">
-        <img src="https://instagram.fblr8-1.fna.fbcdn.net/v/t51.2885-19/563361386_17963142419992409_1089317249765104205_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fblr8-1.fna.fbcdn.net&_nc_cat=105&_nc_oc=Q6cZ2QHvBr3yICLMN_D91QuA_GO3D7DHVbBkHFb8TGhGqjjfmGXC2LIyAfq5E2sBF6BD_aA&_nc_ohc=fuP_U0sPjjAQ7kNvwHk0Ltu&_nc_gid=RVWLEhdOkbC7L51EbfSsdQ&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfsNsUsHuvFvtV3hfwuygNT2lYznPr8psxBtGJDSmpotkg&oe=6985373E&_nc_sid=7a9f4b" alt="Profile" class="w-full h-full object-cover">
+        <img src="https://insta gram.fblr8-1.fna.fbcdn.net/v/t51.2885-19/563361386_17963142419992409_1089317249765104205_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fblr8-1.fna.fbcdn.net&_nc_cat=105&_nc_oc=Q6cZ2QHvBr3yICLMN_D91QuA_GO3D7DHVbBkHFb8TGhGqjjfmGXC2LIyAfq5E2sBF6BD_aA&_nc_ohc=fuP_U0sPjjAQ7kNvwHk0Ltu&_nc_gid=RVWLEhdOkbC7L51EbfSsdQ&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfsNsUsHuvFvtV3hfwuygNT2lYznPr8psxBtGJDSmpotkg&oe=6985373E&_nc_sid=7a9f4b" alt="Profile" class="w-full h-full object-cover">
       </div>
     </div>
     
@@ -690,13 +574,14 @@
 
 <!-- JS FOR INTERACTIVITY -->
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+
   // Intersection Observer for animations
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
-        
-        // Animate skill bars
+
         if (entry.target.classList.contains('skill-progress')) {
           const level = entry.target.getAttribute('data-level');
           entry.target.style.setProperty('--skill-level', level);
@@ -705,27 +590,21 @@
     });
   }, { threshold: 0.2 });
 
-  // Observe all elements with animation classes
   document.querySelectorAll('.fade-up, .skill-progress').forEach(el => observer.observe(el));
 
   // Mobile menu toggle
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
-  
-  menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
 
-  // Close mobile menu when clicking a link
-  document.querySelectorAll('#mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
     });
-  });
+  }
 
   // Back to top button
   const backToTopButton = document.getElementById('back-to-top');
-  
+
   window.addEventListener('scroll', () => {
     if (window.pageYOffset > 300) {
       backToTopButton.classList.remove('hidden');
@@ -733,67 +612,48 @@
       backToTopButton.classList.add('hidden');
     }
   });
-  
+
   backToTopButton.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   // Form submission
- const contactForm = document.getElementById('contact-form');
+  const contactForm = document.getElementById('contact-form');
 
-contactForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  const data = {
-    name: contactForm.name.value,
-    email: contactForm.email.value,
-    projectType: contactForm.projectType.value,
-    message: contactForm.message.value
-  };
+    const data = {
+      name: contactForm.name.value,
+      email: contactForm.email.value,
+      projectType: contactForm.projectType.value,
+      message: contactForm.message.value
+    };
 
-  try {
-  const response = await fetch(
-    "https://bhooshan-portfolio-backend.onrender.com/api/contact",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+    try {
+      const response = await fetch(
+        "https://bhooshan-portfolio-backend.onrender.com/api/contact",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }
+      );
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert(result.message);
+        contactForm.reset();
+      } else {
+        alert(result.error || "Something went wrong");
+      }
+    } catch (error) {
+      alert("Network error. Please try again later.");
     }
-  );
-
-  const result = await response.json();
-
-  if (response.ok) {
-    alert(result.message);
-    contactForm.reset();
-  } else {
-    alert(result.error || "Something went wrong");
-  }
-} catch (error) {
-  alert("Network error. Please try again later.");
-}
-
-  // Project card buttons
-  document.querySelectorAll('.project-card button').forEach(button => {
-    button.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const projectTitle = button.closest('.project-card').querySelector('h3').textContent;
-      alert(`Opening live demo of "${projectTitle}"`);
-    });
   });
 
-  // GitHub links
-  document.querySelectorAll('a .fa-github').forEach(icon => {
-    icon.closest('a').addEventListener('click', (e) => {
-      e.preventDefault();
-      alert('Opening GitHub repository');
-    });
-  });
-
-  // View all projects button
-  document.querySelector('button .fa-folder-open').closest('button').addEventListener('click', () => {
-    alert('Loading all projects...');
-  });
+});
 </script>
 
 </body>
