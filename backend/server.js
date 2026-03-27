@@ -23,7 +23,7 @@ app.use("/api/contact", contactRoutes);
 (async () => {
   try {
     await connectDB();
-    console.log("MySQL connected");
+    console.log("MongoDB connected");
   } catch (err) {
     console.error("MongoDB connection failed:", err.message);
   }
