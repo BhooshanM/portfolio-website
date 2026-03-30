@@ -51,11 +51,31 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
 
     const data = {
-      name: contactForm.name.value,
-      email: contactForm.email.value,
+      name: contactForm.name.value.trim(),
+      email: contactForm.email.value.trim(),
       projectType: contactForm.projectType.value,
-      message: contactForm.message.value
+      message: contactForm.message.value.trim()
     };
+
+    // Empty fields check
+    if (!data.name || !data.email || !data.message) {
+      alert("Please fill all required fields.");
+      return;
+    }
+
+    // Name validation (only letters)
+    const nameRegex = /^[A-Za-z ]+$/;
+    if (!nameRegex.test(data.name)) {
+      alert("Name should contain only letters.");
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(data.email)) {
+      alert("Enter a valid email address.");
+      return;
+    }
 
     try {
       // Auto switch between local and deployed backend
