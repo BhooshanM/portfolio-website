@@ -15,13 +15,15 @@ router.post("/", async (req, res) => {
     });
 
     await newContact.save();
+
     res.json({ message: "Message sent successfully!" });
   } catch (error) {
+    console.error(error);
     res.status(500).json({ error: "Server error" });
   }
 });
 
-// GET all messages (for admin later)
+// GET messages
 router.get("/", async (req, res) => {
   const messages = await Contact.find().sort({ createdAt: -1 });
   res.json(messages);
