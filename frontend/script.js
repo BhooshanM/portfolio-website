@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+  // Wake up backend when site loads (Render free tier fix)
+  fetch("https://bhooshan-portfolio-backend.onrender.com/");
+
   // Intersection Observer for animations
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -62,9 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
           ? "http://localhost:5000/api/contact"
           : "https://bhooshan-portfolio-backend.onrender.com/api/contact";
 
-      // Wake up Render backend (important for free tier)
-      await fetch("https://bhooshan-portfolio-backend.onrender.com/");
-
       const response = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const result = await response.json();
 
       if (response.ok) {
-        alert("Message sent successfully!");
+        alert("Message sent successfully! I will contact you soon.");
         contactForm.reset();
       } else {
         alert(result.error || "Something went wrong");
