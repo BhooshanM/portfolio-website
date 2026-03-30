@@ -1,19 +1,17 @@
 {
   "name": "portfolio-backend",
   "version": "1.0.0",
-  "description": "Backend for portfolio contact form",
+  "description": "Portfolio Contact Form Backend",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
+  "author": "Bhooshan",
+  "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
+    "dotenv": "^16.0.0",
     "express": "^4.18.2",
-<<<<<<< HEAD
-    "mongoose": "^7.8.9"
-=======
-    "mongoose": "^7.5.0"
->>>>>>> 8cc20ef702a935e8430d04de44698845c1db8efb
+    "mongoose": "^7.0.0"
   }
 }
