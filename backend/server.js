@@ -19,10 +19,9 @@ const contactRoutes = require("./routes/contactRoutes");
 app.use("/api/contact", contactRoutes);
 
 // MongoDB connection
-mongoose
-  .connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.log(err));
+  .catch(err => console.log(err));
 
 // Server
 const PORT = process.env.PORT || 5000;

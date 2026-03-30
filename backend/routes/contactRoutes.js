@@ -2,6 +2,11 @@ const express = require("express");
 const router = express.Router();
 const Contact = require("../models/Contact");
 
+// Test GET route
+router.get("/", (req, res) => {
+  res.send("Contact API working");
+});
+
 // POST contact form
 router.post("/", async (req, res) => {
   try {
@@ -11,7 +16,7 @@ router.post("/", async (req, res) => {
       name,
       email,
       projectType,
-      message,
+      message
     });
 
     await newContact.save();
@@ -21,12 +26,6 @@ router.post("/", async (req, res) => {
     console.error(error);
     res.status(500).json({ error: "Server error" });
   }
-});
-
-// GET messages
-router.get("/", async (req, res) => {
-  const messages = await Contact.find().sort({ createdAt: -1 });
-  res.json(messages);
 });
 
 module.exports = router;
