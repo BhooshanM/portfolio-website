@@ -62,6 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
           ? "http://localhost:5000/api/contact"
           : "https://bhooshan-portfolio-backend.onrender.com/api/contact";
 
+      // Wake up Render backend (important for free tier)
+      await fetch("https://bhooshan-portfolio-backend.onrender.com/");
+
       const response = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -71,13 +74,15 @@ document.addEventListener("DOMContentLoaded", function () {
       const result = await response.json();
 
       if (response.ok) {
-        alert(result.message);
+        alert("Message sent successfully!");
         contactForm.reset();
       } else {
         alert(result.error || "Something went wrong");
       }
+
     } catch (error) {
-      alert("Network error. Please try again later.");
+      console.error(error);
+      alert("Server is waking up, please try again in a few seconds.");
     }
   });
 
