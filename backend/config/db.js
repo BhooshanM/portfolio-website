@@ -10,8 +10,4 @@ const connectDB = async () => {
   }
 };
 
-<<<<<<< HEAD
-module.exports = { connectDB };
-=======
 module.exports = connectDB;
->>>>>>> 8cc20ef702a935e8430d04de44698845c1db8efb
