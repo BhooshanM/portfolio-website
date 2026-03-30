@@ -13,7 +13,34 @@
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+<<<<<<< HEAD
     <link rel="stylesheet" href="style.css">
+=======
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 0.8s ease;
+        }
+
+        .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+>>>>>>> 8cc20ef702a935e8430d04de44698845c1db8efb
 </head>
 <body class="bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white overflow-x-hidden">
 
@@ -548,6 +575,96 @@
 <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors hidden">
   <i class="fas fa-chevron-up"></i>
 </button>
+<<<<<<< HEAD
 <script src="script.js"></script>
 </body>
 </html>
+=======
+
+<!-- JS FOR INTERACTIVITY -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Intersection Observer for animations
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+
+        if (entry.target.classList.contains('skill-progress')) {
+          const level = entry.target.getAttribute('data-level');
+          entry.target.style.setProperty('--skill-level', level);
+        }
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.fade-up, .skill-progress').forEach(el => observer.observe(el));
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+
+  // Back to top button
+  const backToTopButton = document.getElementById('back-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backToTopButton.classList.remove('hidden');
+    } else {
+      backToTopButton.classList.add('hidden');
+    }
+  });
+
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Form submission
+  const contactForm = document.getElementById('contact-form');
+
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = {
+      name: contactForm.name.value,
+      email: contactForm.email.value,
+      projectType: contactForm.projectType.value,
+      message: contactForm.message.value
+    };
+
+    try {
+      const response = await fetch(
+        "https://bhooshan-portfolio-backend.onrender.com/api/contact",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }
+      );
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert(result.message);
+        contactForm.reset();
+      } else {
+        alert(result.error || "Something went wrong");
+      }
+    } catch (error) {
+      alert("Network error. Please try again later.");
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>
+>>>>>>> 8cc20ef702a935e8430d04de44698845c1db8efb
