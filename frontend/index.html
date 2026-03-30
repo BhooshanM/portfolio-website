@@ -484,37 +484,59 @@
         <div class="glass-effect rounded-2xl p-8">
           <h3 class="text-2xl font-bold mb-6">Send a Message</h3>
           
-          <form id="contact-form">
-            <div class="mb-6">
-              <label class="block mb-2">Your Name </label>
-              <input type="text" name="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500" placeholder="Example:-Bhooshan🫆">
-            </div>
-            
-            <div class="mb-6">
-              <label class="block mb-2">Email Address</label>
-              <input type="email" name="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500" placeholder="Bhooshan@example.com">
-            </div>
-            
-            <div class="mb-6">
-              <label class="block mb-2">Project Type</label>
-              <select name="projectType" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500">
-                <option>Web Development</option>
-                <option>Mobile App</option>
-                <option>UI/UX Design</option>
-                <option>Consultation</option>
-                <option>Other</option>
-              </select>
-            </div>
-            
-            <div class="mb-6">
-              <label class="block mb-2">Message</label>
-              <textarea name="message" rows="4" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500" placeholder="Tell me about your project..."></textarea>
-            </div>
-            
-            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 py-4 rounded-xl text-lg font-semibold transition-colors">
-              <i class="fas fa-paper-plane mr-2"></i> Send Message
-            </button>
-          </form>
+         <form id="contact-form">
+  <div class="mb-6">
+    <label class="block mb-2">Your Name</label>
+    <input 
+      type="text" 
+      name="name" 
+      pattern="[A-Za-z ]+" 
+      title="Name should contain only letters"
+      required
+      class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500" 
+      placeholder="Example:- Bhooshan">
+  </div>
+
+  <div class="mb-6">
+    <label class="block mb-2">Email Address</label>
+    <input 
+      type="email" 
+      name="email" 
+      required
+      class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500" 
+      placeholder="Bhooshan@example.com">
+  </div>
+
+  <div class="mb-6">
+    <label class="block mb-2">Project Type</label>
+    <select name="projectType" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500">
+      <option>Web Development</option>
+      <option>Mobile App</option>
+      <option>UI/UX Design</option>
+      <option>Consultation</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div class="mb-6">
+    <label class="block mb-2">Message</label>
+    <textarea 
+      name="message" 
+      rows="4" 
+      required
+      class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500" 
+      placeholder="Tell me about your project..."></textarea>
+  </div>
+
+  <button 
+    type="submit" 
+    id="send-btn"
+    class="w-full bg-blue-500 hover:bg-blue-600 py-4 rounded-xl text-lg font-semibold transition-colors">
+    <i class="fas fa-paper-plane mr-2"></i> Send Message
+  </button>
+
+  <p id="form-status" class="text-center mt-4 text-green-400"></p>
+</form>
         </div>
       </div>
     </div>
